@@ -1,0 +1,9 @@
+{
+  "name": "whatsapp-bot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+   "@whiskeysockets/baileys": "npm:ab-baileys@1.0.1",
+    "pino": "^8.0.0"
+  }
+}
