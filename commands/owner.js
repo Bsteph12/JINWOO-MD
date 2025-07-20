@@ -45,33 +45,7 @@ END:VCARD
       }
     };
 
-    try {
-      // Envoi du contact avec contextInfo enrichi
-      await sock.sendMessage(jid, {
-        contacts: { 
-          displayName: config.botOwner, 
-          contacts: [{ vcard }] 
-        },
-        contextInfo: contextInfo
-      });
-      
-      console.log('✅ Contact owner envoyé avec succès avec contextInfo');
-      
-    } catch (err) {
-      console.error('❌ Erreur lors de l\'envoi du contact enrichi:', err);
-      
-      // Fallback 1: Contact sans contextInfo
-      try {
-        await sock.sendMessage(jid, {
-          contacts: { 
-            displayName: config.botOwner, 
-            contacts: [{ vcard }] 
-          }
-        });
-        console.log('⚠️ Contact owner envoyé en fallback (sans contextInfo)');
-      } catch (fallbackErr) {
-        console.error('❌ Erreur dans le fallback contact:', fallbackErr);
-        
+    
         // Fallback 2: Message texte avec les informations
         try {
           const fallbackText = [
@@ -79,10 +53,10 @@ END:VCARD
             '⌜ 𝗢𝗪𝗡𝗘𝗥 𝗖𝗢𝗡𝗧𝗔𝗖𝗧 ⌟',
             '╚═══════◇◆◇═══════╝',
             '',
-            `👤 *Nom:* ${config.botOwner}`,
-            `📱 *Numéro:* ${config.ownerNumber}`,
+            ` *Nom:* ${config.botOwner}`,
+            ` *Numéro:* ${config.ownerNumber}`,
             '',
-            '💻 *by ste_phane_*'
+            '*by dxdev*'
           ].join('\n');
 
           await sock.sendMessage(jid, { 
