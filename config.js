@@ -6,7 +6,7 @@ module.exports = {
   // ——————————————————————————————————————————————
  prefix: '!',
   owner: '237698711207@s.@s.whatsapp.net',
-  repo: 'https://github.com/darling221237',
+  repo: 'https://github.com/Bsteph12/JINWOO-MD.git',
     botOwner:'丂ㄒ乇_卩卄卂几乇_' ,
     botNumber:'237698711207', 
   // Informations du bot
